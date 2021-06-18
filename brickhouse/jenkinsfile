@@ -15,7 +15,6 @@ stages{
     stage ('build'){
         steps {
             sh """ 
-            cd /home/ubuntu/java/
             git clone git@github.com:dilipm47/brickhouse.git
             cd brickhouse
             mvn package
