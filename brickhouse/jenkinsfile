@@ -1,0 +1,27 @@
+pipeline{
+agent {label'master'}
+stages{
+    stage ('Build Trigger'){
+        steps {
+            dir('code') {
+            checkout([$class: 'GitSCM', 
+            branches: [[name: 'master']], 
+            doGenerateSubmoduleConfigurations: false, 
+            extensions: [], 
+            submoduleCfg: [], 
+            userRemoteConfigs: [[credentialsId: '6c0885e7-4210-4630-b818-830913a5b15f', url: 'git@github.com:dilipm47/brickhouse.git']]]) 
+	        }}
+    }
+    stage ('build'){
+        steps {
+            sh """ 
+            cd /home/ubuntu/java/
+            git clone http://github.com/klout/brickhouse
+            cd brickhouse
+            mvn package
+            cd target
+                """
+            }
+        }
+    }    
+}
