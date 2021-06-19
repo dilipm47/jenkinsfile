@@ -15,11 +15,11 @@ stages{
     stage ('build'){
         steps {
             sh """ 
+            cd /home/ubuntu/java/brickhouse/
             git clone git@github.com:dilipm47/brickhouse.git
             cd brickhouse
             mvn package
-            cd target
-                """
+            """
             }
         }
     }    
