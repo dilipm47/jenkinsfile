@@ -9,7 +9,7 @@ stages{
             doGenerateSubmoduleConfigurations: false, 
             extensions: [], 
             submoduleCfg: [], 
-            userRemoteConfigs: [[credentialsId: '6c0885e7-4210-4630-b818-830913a5b15f', url: 'git@github.com:dilipm47/brickhouse.git']]]) 
+            userRemoteConfigs: [[credentialsId: '6c0885e7-4210-4630-b818-830913a5b15f', url: 'dilipm47@github.com:dilipm47/brickhouse.git']]]) 
 	        }}
     }
     stage ('build'){
